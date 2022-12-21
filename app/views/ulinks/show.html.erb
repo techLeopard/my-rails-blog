@@ -1,0 +1,11 @@
+<h1><%= @ulink.title %></h1>
+
+<p><%= @ulink.body %></p>
+
+<ul>
+  <li><%= link_to "Edit", edit_ulink_path(@ulink) %></li>
+  <li><%= link_to "Delete", ulink_path(@ulink), data: {
+    turbo_method: :delete,
+    turbo_confirm: "Are you sure?"
+  } %></li>
+</ul>

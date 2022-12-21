@@ -1,0 +1,12 @@
+<h1>Useful Links</h1>
+
+<ul>
+    <% @ulinks.each do |ulink| %>
+        <li>
+            <%= link_to ulink.title, ulink %>
+        </li>
+    <% end %>
+</ul>
+
+<%= link_to "New Useful Link", new_ulink_path %>
+                
