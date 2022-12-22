@@ -1,0 +1,13 @@
+<h1>My Logs</h1>
+
+<ul class = "list-group" style="list-style: none;">
+    <% @mylogs.each do |mylog| %>
+        <li>
+            <%= mylog.created_at.strftime("%r %D") %>
+            <strong><%= link_to mylog.title, mylog %></strong><br>
+            <%= mylog.body %><br>
+        </li>
+    <% end %>
+</ul>
+
+<%= link_to "Create new event", new_mylog_path %>
