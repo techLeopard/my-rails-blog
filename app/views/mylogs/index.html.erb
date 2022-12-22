@@ -3,11 +3,13 @@
 <ul class = "list-group" style="list-style: none;">
     <% @mylogs.each do |mylog| %>
         <li>
-            <%= mylog.created_at.strftime("%r %D") %>
+            <%= mylog.created_at.localtime.strftime("%b %d %a %R") %><br>
             <strong><%= link_to mylog.title, mylog %></strong><br>
             <%= mylog.body %><br>
+            <span class="text-muted">Last updated at <%= mylog.updated_at.localtime.strftime("%b %d %a %R") %>.</span>
+            <hr>
         </li>
     <% end %>
 </ul>
 
-<%= link_to "Create new event", new_mylog_path %>
+<%= link_to "Create new log", new_mylog_path, class: "btn btn-lg btn-primary" %>
