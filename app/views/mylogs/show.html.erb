@@ -2,4 +2,10 @@
 <p><%= @mylog.body %></p>
 <p class="font-monospace text-muted">created at <%= @mylog.created_at %>.</p>
 
-<%= link_to "edit", edit_mylog_path %>
+<ul>
+  <li><%= link_to "Edit", edit_mylog_path(@mylog) %></li>
+  <li><%= link_to "Delete", mylog_path(@mylog), data: {
+    turbo_method: :delete,
+    turbo_confirm: "Are you sure?"
+  } %></li>
+</ul>

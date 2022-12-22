@@ -36,6 +36,13 @@ class MylogsController < ApplicationController
     end
   end
 
+  def destroy
+    @mylog = Mylog.find(params[:id])
+    @mylog.destroy
+    
+    redirect_to mylogs_path, status: :see_other
+  end
+
 private
 def mylog_params
   params.require(:mylog).permit(:title, :body)
