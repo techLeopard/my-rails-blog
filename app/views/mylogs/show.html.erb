@@ -2,7 +2,7 @@
 
 <h1><%= @mylog.title %></h1>
 <p><%= @mylog.body %></p>
-<p class="font-monospace text-muted">created at <%= @mylog.created_at %>.</p>
+<p class="font-monospace text-muted">created at <%= @mylog.created_at.localtime %>.</p>
 
 <ul>
   <li><%= link_to "Edit", edit_mylog_path(@mylog) %></li>
