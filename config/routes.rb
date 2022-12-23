@@ -10,5 +10,5 @@ Rails.application.routes.draw do
   resources :articles
   resources :ulinks
   resources :mylogs
-
+  resources :questions
 end
