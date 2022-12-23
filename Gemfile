@@ -3,15 +3,18 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "3.1.2"
 
+gem 'sass-rails'
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
+
 gem "rails", "~> 7.0.4"
 gem "bcrypt",          "3.1.18"
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
 
-# Use sqlite3 as the database for Active Record
 
+# Use sqlite3 as the database for Active Record
+gem "sqlite3", "1.4.2"
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "5.6.4"
 
@@ -49,7 +52,6 @@ gem "bootsnap", "1.12.0", require: false
 # gem "image_processing", "~> 1.2"
 
 group :development, :test do
-  gem "sqlite3", "1.4.2"
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
 end
@@ -76,9 +78,4 @@ group :test do
   gem "guard",                    "2.18.0"
   gem "guard-minitest",           "2.4.6"
 
-end
-
-
-group :production do
-  gem "pg", "1.3.5"
 end

@@ -44,8 +44,9 @@ class MylogsController < ApplicationController
   end
 
 private
-def mylog_params
-  params.require(:mylog).permit(:title, :body)
-end
+
+  def mylog_params
+    params.require(:mylog).permit(:title, :body)
+  end
 
 end

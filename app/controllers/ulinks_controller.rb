@@ -29,7 +29,7 @@ class UlinksController < ApplicationController
 
   def update
     @ulink = Ulink.find(params[:id])
-
+    
     if @ulink.update(ulink_params)
       redirect_to @ulink
     else
@@ -40,14 +40,15 @@ class UlinksController < ApplicationController
   def destroy
     @ulink = Ulink.find(params[:id])
     @ulink.destroy
-    
-    redirect_to ulinks_path, status: :see_other
+    flash[:success] = "The item was successfully destroyed."
+    redirect_to ulinks_path
   end
 
 
   private
-  def ulink_params
-    params.require(:ulink).permit(:title, :body)
-  end
+
+    def ulink_params
+      params.require(:ulink).permit(:title, :body)
+    end
 
 end
