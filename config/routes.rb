@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   root to: "main#index" 
   get "about", to: "about#index"
-
+  resources :about
   resources :articles
   resources :ulinks
   resources :mylogs
