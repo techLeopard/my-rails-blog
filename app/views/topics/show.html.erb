@@ -1,0 +1,21 @@
+<% provide :title, "Topic Questions" %>
+
+<%= link_to "All Topics", topics_path %>
+
+<div class='my-5'>
+    <h2>
+        <%= @topic.title %>
+    </h2>
+
+    <%= render 'layouts/topic_controls' %>
+</div>
+
+
+<div>
+    <%= render @topic.question_items %>
+    <div id="form">
+        <%= render "question_items/form" %>
+        <%= render "answers/form" %>
+    </div>
+</div>
+
