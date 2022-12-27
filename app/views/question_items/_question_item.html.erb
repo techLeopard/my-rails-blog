@@ -1,0 +1,10 @@
+<div class="card my-5">
+<%= button_to "Delete Q", topic_question_item_path(@topic, question_item.id), 
+method: :delete, data: { confirm: "Are you sure?" } %>
+  <h6 class="card-header"><%= question_item.content %></h6>
+  
+    <div class="d-flex flex-row">
+        <div class="p-2">Question answer</div>
+        <div class="p-2"></div> 
+    </div>
+</div>

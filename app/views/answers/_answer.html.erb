@@ -1,0 +1,6 @@
+<%= button_to "Delete Answer", topic_question_item_answers_path(@topic, @question_item, @answer.id), 
+method: :delete, data: { confirm: "Are you sure?" } %>
+<p><%= answer.content %></p>
+
+
+
