@@ -48,7 +48,7 @@ class TopicsController < ApplicationController
   end
 
   # DELETE /topics/1 or /topics/1.json
-  def destroy
+  def destroy  
     @topic.destroy
 
     respond_to do |format|
