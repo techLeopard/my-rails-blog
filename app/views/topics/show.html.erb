@@ -1,21 +1,13 @@
-<% provide :title, "Topic Questions" %>
+<p style="color: green"><%= notice %></p>
 
-<%= link_to "All Topics", topics_path %>
+<div class="my-4">
+  <%= link_to "All Questions for this topic", topic_questions_path(@topic) %> |
+  <%= link_to "Edit this topic", edit_topic_path(@topic) %> |
+  <%= link_to "Back to topics", topics_path %>
 
-<div class='my-5'>
-    <h2>
-        <%= @topic.title %>
-    </h2>
-
-    <%= render 'layouts/topic_controls' %>
+  <%= button_to "Destroy this topic", @topic, method: :delete %>
 </div>
 
 
-<div>
-    <%= render @topic.question_items %>
-    <div id="form">
-        <%= render "question_items/form" %>
-        <%= render "answers/form" %>
-    </div>
-</div>
-
+<%= render @topic %>
+<%= render @topic.questions %>

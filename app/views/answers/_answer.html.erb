@@ -1,6 +1,12 @@
-<%= button_to "Delete Answer", topic_question_item_answers_path(@topic, @question_item, @answer.id), 
-method: :delete, data: { confirm: "Are you sure?" } %>
-<p><%= answer.content %></p>
+<div id="<%= dom_id answer %>">
+  <p>
+    <strong>Content:</strong>
+    <%= answer.content %>
+  </p>
 
+  <p>
+    <strong>Question:</strong>
+    <%= answer.question_id %>
+  </p>
 
-
+</div>

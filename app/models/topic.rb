@@ -1,3 +1,4 @@
 class Topic < ApplicationRecord
-    has_many :question_items
+    has_many :questions
+    has_many :answers, through: :questions
 end

@@ -2,10 +2,8 @@
 
 one:
   content: MyText
-  question_item: one
-  topic: one
+  question: one
 
 two:
   content: MyText
-  question_item: two
-  topic: two
+  question: two

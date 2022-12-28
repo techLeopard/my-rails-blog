@@ -1,6 +1,6 @@
-class CreateQuestionItems < ActiveRecord::Migration[7.0]
+class CreateQuestions < ActiveRecord::Migration[7.0]
   def change
-    create_table :question_items do |t|
+    create_table :questions do |t|
       t.text :content
       t.references :topic, null: false, foreign_key: true
 
