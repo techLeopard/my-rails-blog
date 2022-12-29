@@ -5,9 +5,11 @@
     <%= button_to "Destroy this question", [@topic, @question], method: :delete %>
   </div>
   <%= link_to "Back to questions", [@topic, :questions] %> |
-  <%= link_to "Edit this question", edit_topic_question_path([@topic, @question]) %>
+  <%= link_to "Edit this question", edit_topic_question_path([@topic, @question]) %> |
+  <%= link_to "Answers for this Question", topic_question_answers_path(@topic, @question) %>
 </div>
 
 
 <%= render @question %>
+
 

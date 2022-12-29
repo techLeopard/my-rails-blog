@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @answer %>
+
+<div>
+  <%= link_to "Edit this answer", edit_topic_question_answer_path([@topic, @question, @answer]) %> |
+  <%= link_to "Back to answers", [@topic, @question, :answers] %>
+
+  <%= button_to "Destroy this answer", [@topic, @question, @answer], method: :delete %>
+</div>

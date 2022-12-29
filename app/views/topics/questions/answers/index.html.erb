@@ -1,12 +1,19 @@
 <p style="color: green"><%= notice %></p>
 
+<div class='my-4'>
+  <%= link_to "Back to question", [@topic, @question] %>
+</div>
+
 <h1>Answers</h1>
+<p>
+  for topic:
+</p>
 
 <div id="answers">
   <% @answers.each do |answer| %>
     <%= render answer %>
     <p>
-      <%= link_to "Show this answer", answer %>
+      <%= link_to "Show this answer", [@topic, @question, answer] %>
     </p>
   <% end %>
 </div>
