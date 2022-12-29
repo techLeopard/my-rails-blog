@@ -2,13 +2,17 @@
 
 <h1>Topics</h1>
 
+<%= link_to "New topic", new_topic_path, class: "btn btn-primary mt-5" %>
+
 <div id="topics">
   <% @topics.each do |topic| %>
-    <%= render topic %>
-    <p>
-      <%= link_to "Show this topic", topic %>
-    </p>
+    <div class="card my-5 p-4">
+      <%= render topic %>
+      <p>
+        <%= link_to "Show this topic", topic %>
+      </p>
+    </div>
   <% end %>
 </div>
 
-<%= link_to "New topic", new_topic_path %>
+

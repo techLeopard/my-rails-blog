@@ -1,7 +1,8 @@
 <p style="color: green"><%= notice %></p>
 
-<div class='my-4'>
-  <%= link_to "Back to question", [@topic, @question] %>
+<div class='btn-group my-4'>
+  <%= link_to "Back to question", [@topic, @question], class:"btn btn-outline-primary"%>
+  <%= link_to "New answer", new_topic_question_answer_path, class: "btn btn-primary" %>
 </div>
 
 <h1>Answers</h1>
@@ -11,11 +12,12 @@
 
 <div id="answers">
   <% @answers.each do |answer| %>
-    <%= render answer %>
-    <p>
-      <%= link_to "Show this answer", [@topic, @question, answer] %>
-    </p>
+    <div class="card my-4 p-3">
+      <%= render answer %>
+      <p>
+        <%= link_to "Show this answer", [@topic, @question, answer] %>
+      </p>
+    </div>
   <% end %>
 </div>
 
-<%= link_to "New answer", new_topic_question_answer_path %>
