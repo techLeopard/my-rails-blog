@@ -1,4 +1,4 @@
-class QuestionsController < ApplicationController
+class Topics::QuestionsController < ApplicationController
   before_action :set_topic
   before_action :set_question, only: %i[ show edit update destroy ]
 

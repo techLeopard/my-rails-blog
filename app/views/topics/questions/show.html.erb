@@ -1,0 +1,13 @@
+<p style="color: green"><%= notice %></p>
+
+<div class='my-4'>
+  <div class='my-3'>
+    <%= button_to "Destroy this question", [@topic, @question], method: :delete %>
+  </div>
+  <%= link_to "Back to questions", [@topic, :questions] %> |
+  <%= link_to "Edit this question", edit_topic_question_path([@topic, @question]) %>
+</div>
+
+
+<%= render @question %>
+

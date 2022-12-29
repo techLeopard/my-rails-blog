@@ -3,8 +3,8 @@
 <%= render @answer %>
 
 <div>
-  <%= link_to "Edit this answer", edit_answer_path(@answer) %> |
-  <%= link_to "Back to answers", answers_path %>
+  <%= link_to "Edit this answer", edit_topic_question_answer_path(@answer) %> |
+  <%= link_to "Back to answers", topic_question_answers_path %>
 
   <%= button_to "Destroy this answer", @answer, method: :delete %>
 </div>

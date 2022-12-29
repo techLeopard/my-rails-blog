@@ -1,13 +1,13 @@
 <p style="color: green"><%= notice %></p>
 
 <div class="my-4">
-  <%= link_to "All Questions for this topic", topic_questions_path(@topic) %> |
+  <div class='my-3'>
+    <%= button_to "Destroy this topic", @topic, method: :delete %>
+  </div>
+  <%= link_to "Back to topics", topics_path %> |
   <%= link_to "Edit this topic", edit_topic_path(@topic) %> |
-  <%= link_to "Back to topics", topics_path %>
+  <%= link_to "All Questions for this topic", topic_questions_path(@topic) %>
 
-  <%= button_to "Destroy this topic", @topic, method: :delete %>
 </div>
 
-
 <%= render @topic %>
-<%= render @topic.questions %>
