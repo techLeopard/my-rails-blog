@@ -30,7 +30,7 @@ class Topics::Questions::AnswersController < ApplicationController
 
     respond_to do |format|
       if @answer.save
-        format.html { redirect_to [@topic, @question, @answer], notice: "Answer was successfully created." }
+        format.html { redirect_to [@topic, @question], notice: "Answer was successfully created." }
         format.json { render :show, status: :created, location: @answer }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -43,7 +43,7 @@ class Topics::Questions::AnswersController < ApplicationController
   def update
     respond_to do |format|
       if @answer.update(answer_params)
-        format.html { redirect_to [@topic, @question, @answer], notice: "Answer was successfully updated." }
+        format.html { redirect_to [@topic, @question], notice: "Answer was successfully updated." }
         format.json { render :show, status: :ok, location: @answer }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -57,7 +57,7 @@ class Topics::Questions::AnswersController < ApplicationController
     @answer.destroy
 
     respond_to do |format|
-      format.html { redirect_to [@topic, @question, :answers], notice: "Answer was successfully destroyed." }
+      format.html { redirect_to [@topic, @question], notice: "Answer was successfully destroyed." }
       format.json { head :no_content }
     end
   end

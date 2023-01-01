@@ -1,11 +1,15 @@
+<% provide(:title, "Answer") %>
+
 <p style="color: green"><%= notice %></p>
 <%= link_to "Back to answers", [@topic, @question, :answers], class: "btn btn-outline-primary" %>
-
-<div class="card my-5 p-4">
-  <%= render @answer %>
-</div>
 
 <div class="btn-group-vertical">
   <%= link_to "Edit this answer", edit_topic_question_answer_path([@topic, @question, @answer]), class: "btn btn-outline-dark" %>
   <%= button_to "Destroy this answer", [@topic, @question, @answer], method: :delete, class: "btn btn-outline-danger" %>
 </div>
+
+
+<div class="card my-5 px-3">
+  <%= simple_format render @answer %>
+</div>
+

@@ -10,6 +10,7 @@ class Topics::QuestionsController < ApplicationController
 
   # GET /questions/1 or /questions/1.json
   def show
+    @answers = @question.answers
   end
 
   # GET /questions/new
@@ -29,7 +30,7 @@ class Topics::QuestionsController < ApplicationController
 
     respond_to do |format|
       if @question.save
-        format.html { redirect_to [@topic, @question], notice: "Question was successfully created." }
+        format.html { redirect_to [@topic], notice: "Question was successfully created." }
         format.json { render :show, status: :created, location: @question }
       else
         format.html { render :new, status: :unprocessable_entity }

@@ -1,16 +1,36 @@
+<% provide(:title, "Topic") %>
+
 <p style="color: green"><%= notice %></p>
 
-<div class="btn-group">
-  <%= link_to "Back to topics", topics_path, class: "btn btn-outline-primary" %>
-  <%= link_to "All Questions for this topic", topic_questions_path(@topic), class: "btn btn-primary" %>
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><%= link_to "Topics", topics_path %></li>
+    <li class="breadcrumb-item active" aria-current="page"><%= @topic.content %></li>
+    <li class="breadcrumb-item"><%= link_to "Qs Controls", topic_questions_path(@topic) %></li>
+  </ol>
+</nav>
+
+
+<div class="btn-group" role="group">
+  <%= link_to "Rename topic", edit_topic_path(@topic), class: "btn btn-outline-primary" %>
+  <%= link_to "New question", new_topic_question_path(@topic), class: "btn btn-primary" %>
+
+  <%# Commenting out the Destroy button #%>
+  <% if false %>
+  <%= button_to "Destroy this topic", @topic, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-primary" %>
+  <% end %>
 </div>
 
-<div class="card my-5 p-4">
-  <%= render @topic %>
-</div>
+  <div class="my-5">
+    <h1><%= render @topic %></h1>
+  </div>
 
 
-<div class="btn-group-vertical">
-  <%= link_to "Edit this topic", edit_topic_path(@topic), class: "btn btn-outline-dark" %>
-  <%= button_to "Destroy this topic", @topic, method: :delete, class: "btn btn-outline-danger" %>
+
+<div id="questions">
+<% @questions.each do |question| %>
+  <div class="my-4">
+      <%= link_to question.content, topic_question_path(@topic, question) %>
+  </div>
+<% end %>
 </div>

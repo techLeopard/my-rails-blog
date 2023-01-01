@@ -1,4 +1,16 @@
+<% provide(:title, "Index Qs") %>
+
 <p style="color: green"><%= notice %></p>
+
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><%= link_to "Topics", topics_path %></li>
+    <li class="breadcrumb-item"><%= link_to @topic.content, topic_path(@topic) %></li>
+    <li class="breadcrumb-item active" aria-current="page">Qs Controls</li>
+  </ol>
+</nav>
+
+
 
 <h1>Questions</h1>
 
@@ -12,7 +24,8 @@
     <div class="card my-4 p-3">
       <%= render question %>
     <p>
-      <%= link_to "Show this question", topic_question_path(@topic, question) %>
+    <%= link_to "Edit this question", edit_topic_question_path(@topic, question) %>
+      <%= button_to "Delete this question", [@topic, question], method: :delete %>
     </p>
     </div>
   <% end %>
