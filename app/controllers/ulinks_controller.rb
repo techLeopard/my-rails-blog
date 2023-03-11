@@ -16,7 +16,7 @@ class UlinksController < ApplicationController
     @ulink = Ulink.new(ulink_params)
 
     if @ulink.save
-      redirect_to @ulink
+      redirect_to ulinks_path
     else
       render :new, status: :unprocessable_entity
     end

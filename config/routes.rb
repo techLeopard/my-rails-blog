@@ -5,8 +5,8 @@ Rails.application.routes.draw do
     end
   end
   root to: "main#index" 
-  get "about", to: "about#index"
-  resources :about
+  get "stack", to: "stack#index"
+  resources :stack
   resources :articles
   resources :ulinks
   resources :mylogs
